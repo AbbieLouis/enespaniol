@@ -3,57 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opening Links...</title>
-  <script>
-    function openLinks() {
-      // Open the first link in the current tab
-      window.location.href = "https://youtube.com/playlist?list=PLwe7VVnruo3bmGEDcUGeP-QwG-pErGAZV&si=vthMj3_rTi0CI-xl";
-
-      // Open the second link in a new tab
-      setTimeout(() => {
-        window.open("https://www.profitablecpmrate.com/ef5vbkbyta?key=1b36bce90a186c269e1d7ef6dd3061ad", "_blank");
-      }, 500); // Slight delay to ensure the first action is completed
-    }
-  </script>
+  <title>Embedded Pages</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: white;
-      text-align: center;
+      background: #f0f0f0;
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
+
+    .frame-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
-    p {
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      color: #fff;
-      background-color: #ff477e;
+
+    iframe {
       border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      width: 100%;
+      flex-grow: 1;
     }
-    button:hover {
-      background-color: #ff6b9e;
+
+    iframe.top-frame {
+      height: 50%; /* Top window occupies half the height */
+    }
+
+    iframe.bottom-frame {
+      height: 50%; /* Bottom window occupies half the height */
     }
   </style>
 </head>
-<body onload="openLinks()">
-  <h1>Preparing your experience...</h1>
-  <p>The links are being opened. Please wait...</p>
+<body>
+  <div class="frame-container">
+    <!-- Top frame for the first link -->
+    <iframe 
+      class="top-frame" 
+      src="https://youtube.com/playlist?list=PLwe7VVnruo3bmGEDcUGeP-QwG-pErGAZV&si=vthMj3_rTi0CI-xl" 
+      title="YouTube Playlist">
+    </iframe>
+
+    <!-- Bottom frame for the second link -->
+    <iframe 
+      class="bottom-frame" 
+      src="https://www.profitablecpmrate.com/ef5vbkbyta?key=1b36bce90a186c269e1d7ef6dd3061ad" 
+      title="Profitable CPM Rate">
+    </iframe>
+  </div>
 </body>
 </html>
