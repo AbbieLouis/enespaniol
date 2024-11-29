@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
+  <title>Opening Links...</title>
   <script>
-    // Open the YouTube playlist in a new tab when the page loads
-    window.onload = function() {
-      window.open("https://youtube.com/playlist?list=PLwe7VVnruo3bmGEDcUGeP-QwG-pErGAZV&si=vthMj3_rTi0CI-xl", "_blank");
-      
-      // Set a timer to redirect to the second link after 15 seconds
+    function openLinks() {
+      // Open the first link in the current tab
+      window.location.href = "https://youtube.com/playlist?list=PLwe7VVnruo3bmGEDcUGeP-QwG-pErGAZV&si=vthMj3_rTi0CI-xl";
+
+      // Open the second link in a new tab
       setTimeout(() => {
-        window.location.href = "https://www.profitablecpmrate.com/ef5vbkbyta?key=1b36bce90a186c269e1d7ef6dd3061ad";
-      }, 15000);
-    };
+        window.open("https://www.profitablecpmrate.com/ef5vbkbyta?key=1b36bce90a186c269e1d7ef6dd3061ad", "_blank");
+      }, 500); // Slight delay to ensure the first action is completed
+    }
   </script>
   <style>
     body {
@@ -37,10 +37,23 @@
       font-size: 1.2rem;
       opacity: 0.8;
     }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #ff477e;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff6b9e;
+    }
   </style>
 </head>
-<body>
-  <h1>Taking you to something awesome!</h1>
-  <p>The page will redirect shortly. Please wait...</p>
+<body onload="openLinks()">
+  <h1>Preparing your experience...</h1>
+  <p>The links are being opened. Please wait...</p>
 </body>
 </html>
