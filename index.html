@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MrBeast en Español</title>
+  <title>Embedded Pages</title>
   <style>
     body {
       margin: 0;
@@ -47,32 +47,10 @@
 
     <!-- Bottom frame for the second link -->
     <iframe 
-      id="bottom-iframe" 
       class="bottom-frame" 
       src="https://www.profitablecpmrate.com/ef5vbkbyta?key=1b36bce90a186c269e1d7ef6dd3061ad" 
       title="Profitable CPM Rate">
     </iframe>
   </div>
-
-  <script>
-    // Add an event listener to the second iframe
-    const bottomIframe = document.getElementById('bottom-iframe');
-
-    bottomIframe.onload = () => {
-      // Access the iframe content
-      const iframeDocument = bottomIframe.contentDocument || bottomIframe.contentWindow.document;
-
-      // Add an event listener to intercept clicks on links
-      iframeDocument.addEventListener('click', (event) => {
-        const target = event.target;
-
-        // Check if the clicked element is a link
-        if (target.tagName === 'A' && target.href) {
-          event.preventDefault(); // Prevent the default action
-          window.open(target.href, '_blank'); // Open the link in a new tab
-        }
-      });
-    };
-  </script>
 </body>
 </html>
